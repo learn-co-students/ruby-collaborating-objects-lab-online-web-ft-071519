@@ -23,8 +23,8 @@ class MP3Importer
     filenames = files
  
     filenames.each do|file|
-      song = Song.new(file)
-      song.new_by_filename(file)
+      
+      song= Song.new_by_filename(file)
     end
   end 
 end
