@@ -24,19 +24,22 @@ class Artist
   end
 
   def self.find_or_create_by_name(name)
+   returnValue = []
     @@all.each do |artistName|
       if artistName.name == name
        returnValue = artistName 
       end
-      
-      if returnValue == nil 
-         Artist.new(name)
-      end
+    end
+    
+    if returnValue == [] 
+      Artist.new(name)
     end
   end
   
   def print_songs
-
+    @songs.each do |songElement|
+      puts songElement.name
+    end
   end
   
 end
